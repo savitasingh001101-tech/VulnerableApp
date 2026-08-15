@@ -3,7 +3,7 @@ import subprocess
 import hashlib
 import sqlite3
 
-password = "TEST_PASSWORD_ONLY"
+password = "123456"
 
 user_input = input("Enter command: ")
 
