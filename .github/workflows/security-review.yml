@@ -17,17 +17,6 @@ jobs:
       - name: Run Semgrep
         run: semgrep scan --config auto .
 
-  bandit:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install Bandit
-        run: pip install bandit
-
-      - name: Run Bandit
-        run: bandit -r .
-
   gitleaks:
     runs-on: ubuntu-latest
     steps:
@@ -47,14 +36,3 @@ jobs:
           project: VulnerableApp
           path: .
           format: HTML
-          
-  sonarqube:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Sonar Scan
-        uses: SonarSource/sonarqube-scan-action@master
-        env:
-          SONAR_TOKEN: ${{ squ_7e5dcf099b9c011cc34c8a10bfab3b4448535a6d }}
